@@ -9,7 +9,7 @@ class ShipmentSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Shipment
-        fields = ('title', 'image', 'weight', 'height_dimesion','width_dimesion' ,'is_delivered')
+        fields = ('id', 'title', 'image', 'weight', 'height_dimesion','width_dimesion' ,'is_delivered')
 
     def perform_create(self, validation_data):
         return Shipment.objects.create(**validation_data)
