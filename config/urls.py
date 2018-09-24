@@ -25,10 +25,12 @@ urlpatterns = [
 
     # Trips managment
     path("trips/",
-         include("HitchHikerDemo.trips.urls")
-         )
+         include("HitchHikerDemo.trips.urls")),
 
-] + static(
+    #Shipments urls
+    path("shipments/",include("HitchHikerDemo.shipments.urls"))
+
+              ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
 
