@@ -24,11 +24,12 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
 
     # Trips managment
-    path("trips/",
-         include("HitchHikerDemo.trips.urls")),
+    path("trips/",include("HitchHikerDemo.trips.urls")),
 
     #Shipments urls
-    path("shipments/",include("HitchHikerDemo.shipments.urls"))
+    path("shipments/", include("HitchHikerDemo.shipments.urls")),
+
+    path("deals/",  include("HitchHikerDemo.deals.urls"))
 
               ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
