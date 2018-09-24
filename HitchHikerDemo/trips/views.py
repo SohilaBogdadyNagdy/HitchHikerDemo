@@ -8,8 +8,8 @@ class TripsViewSet(viewsets.ModelViewSet):
     """
 
     """
-    _trips = Trip.objects.all()
+    queryset = Trip.objects.all()
     serializer_class = TripsSerializer
 
-
-
+    def perform_create(self, serializer):
+        serializer.save()

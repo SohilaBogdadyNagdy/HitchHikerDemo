@@ -5,6 +5,6 @@ from .views import TripsViewSet
 
 app_name = "trips"
 router = routers.DefaultRouter()
-router.register(r'all', TripsViewSet, base_name='Trip')
+router.register(r'', TripsViewSet, base_name='Trip')
 
 urlpatterns = router.urls
