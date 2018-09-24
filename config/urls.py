@@ -5,6 +5,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+from HitchHikerDemo.trips import urls
+
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
@@ -20,7 +22,12 @@ urlpatterns = [
         include("HitchHikerDemo.users.urls", namespace="users"),
     ),
     path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
+
+    # Trips managment
+    path("trips/",
+         include("HitchHikerDemo.trips.urls")
+         )
+
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
