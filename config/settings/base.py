@@ -38,7 +38,14 @@ USE_TZ = True
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
-    'default': env.db('DATABASE_URL'),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'HitchHikerDemo',
+        'USER': 'sohilaboghdady',
+        'PASSWORD': '2wsx5tgb',
+        'HOST': 'localhost',
+        'PORT': '5432'
+                }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -70,7 +77,10 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'HitchHikerDemo.users.apps.UsersAppConfig',
-    # Your stuff: custom apps go here
+    'HitchHikerDemo.trips',
+    'HitchHikerDemo.deals',
+    'HitchHikerDemo.shipments'
+
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
